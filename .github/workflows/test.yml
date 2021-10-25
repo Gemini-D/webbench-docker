@@ -47,7 +47,7 @@ jobs:
           php -m
           php -i
       - name: Setup Packages
-        run: composer update -o
+        run: composer update -o --no-dev
       - name: Run Test Cases
         run: |
           docker build . -t test
