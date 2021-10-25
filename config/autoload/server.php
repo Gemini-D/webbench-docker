@@ -14,7 +14,6 @@ use Hyperf\Server\Server;
 
 return [
     'mode' => SWOOLE_BASE,
-    'type' => \Hyperf\Server\CoroutineServer::class,
     'servers' => [
         [
             'name' => 'http',
@@ -28,6 +27,7 @@ return [
         ],
     ],
     'settings' => [
+        'daemonize' => (int) env('DAEMONIZE', 0),
         'enable_coroutine' => true,
         'worker_num' => 1,
         'pid_file' => BASE_PATH . '/runtime/hyperf.pid',
