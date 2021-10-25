@@ -56,5 +56,5 @@ jobs:
           export DAEMONIZE=1 && php bin/hyperf.php start
           curl http://127.0.0.1:9501/
           curl http://127.0.0.1:9502/
-          ab -c 32 -n 100000 http://127.0.0.1:9501/
           ab -c 32 -n 100000 http://127.0.0.1:9502/
+          ab -c 32 -n 100000 http://127.0.0.1:9501/
