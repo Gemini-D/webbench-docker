@@ -51,7 +51,8 @@ jobs:
       - name: Run Test Cases
         run: |
           docker build . -t test
-          docker run -p 9502:9501 -d test
+          docker run -p 9502:9501 --name test -d test
+          docker inspect test
           export DAEMONIZE=1 && php bin/hyperf.php start
           curl http://127.0.0.1:9501/
           curl http://127.0.0.1:9502/
